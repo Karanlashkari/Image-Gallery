@@ -1,0 +1,52 @@
+:root {
+    /* Set fade in duration */
+    --fade-time: 1s;
+  }
+
+body {
+    margin: 20px;
+    padding: 5px;
+    background-color: rgb(255, 127, 127);
+    background-image: linear-gradient(rgb(131, 221, 131), rgb(63, 145, 246));
+  }
+  
+  .container {
+    max-width: 55%;
+    margin: auto;
+    border: #f9f988 solid 6px;
+    background: black;
+  }
+  
+  .main-img img,
+  .imgs img {
+    width: 100%;
+  }
+  
+  .imgs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+  }
+  
+  .imgs img {
+    cursor: pointer;
+  }
+  
+  /* Fade in animation */
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn var(--fade-time) ease-in 1 forwards;
+  }
+  
+  /* Media Queries */
+  @media(max-width: 600px) {
+    .imgs {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
